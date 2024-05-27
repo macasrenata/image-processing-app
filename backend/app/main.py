@@ -8,7 +8,7 @@ import io
 import os
 import base64
 
-DATABASE_URL = "postgresql://user:password@localhost/image_processing_db"
+DATABASE_URL = "postgresql://postgres:password@localhost/image_processing_db"
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
