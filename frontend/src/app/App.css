@@ -1,0 +1,116 @@
+.app {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    height: 100vh;
+  }
+  
+  .image-upload {
+    grid-column: 1 / span 4;
+  }
+  
+  .image-list {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .original-image {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  .processed-image {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  
+  .operations-list {
+    grid-column: 4;
+    grid-row: 2;
+  }
+  
+
+  .image-upload-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .upload-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .upload-button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  .image-list-container {
+    padding: 20px;
+  }
+  
+  .image-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .image-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .image-item:hover {
+    background-color: #e9e9e9;
+  }
+
+  .operations-list-container {
+    padding: 20px;
+  }
+  
+  .operations-list-container button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .operations-list-container button:hover {
+    background-color: #0056b3;
+  }
+
+
+  .original-image-container {
+    padding: 20px;
+  }
+  
+  .original-image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  .processed-image-container {
+    padding: 20px;
+  }
+  
+  .processed-image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  
+  
+  
