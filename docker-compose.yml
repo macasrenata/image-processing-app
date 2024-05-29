@@ -1,27 +1,40 @@
 version: '3.8'
 
 services:
-  backend:
-    build: ./backend
-    ports:
-      - "8000:8000"
-    environment:
-      - DATABASE_URL=postgresql://postgres:password@db/image_processing_db
-    depends_on:
-      - db
-
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
     ports:
       - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    environment:
+      - NODE_ENV=development
     depends_on:
       - backend
 
-  db:
-    image: postgres:13
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: image_processing_db
+      - DATABASE_URL=postgresql://postgres:password@db:5432/image_processing_db
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=image_processing_db
     ports:
       - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
